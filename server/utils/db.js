@@ -8,14 +8,14 @@ export const getSequelize = () => {
     return sequelize
   } else {
     sequelize = new Sequelize(
-      'voting',
-      'root',
-      'Password#1',
-       {
-         host: 'localhost',
-         dialect: 'mysql'
-       }
-     );
+      process.env.DATABASE_NAME,
+      process.env.DATABASE_USER,
+      process.env.DATABASE_PASSWORD,
+      {
+        host: process.env.DATABASE_HOST,
+        dialect: 'mysql'
+      }
+    );
 
      return sequelize;
   }
