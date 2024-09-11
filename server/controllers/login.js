@@ -7,7 +7,7 @@ export const doLogin = async (req, res, next) => {
 
   console.log(req)
 
-  if (user.password === req.body.password) {
+  if (user?.password === req.body.password) {
     res.send(true)
   } else {
     res.send(false)
