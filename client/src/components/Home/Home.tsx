@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { LogoutOutlined, EnvironmentOutlined } from "@ant-design/icons";
+import { LogoutOutlined, EnvironmentOutlined, FileDoneOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu } from "antd";
 import { RomaniaMap } from "../RomaniaMap/RomaniaMap";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
+import { Vote } from "../Vote/Vote";
 
 const { Content, Sider, Header } = Layout;
 
@@ -31,14 +32,15 @@ export const Home: React.FC = () => {
 
   const onClick: MenuProps["onClick"] = (e) => {
     setCurrent(e.key);
-    if (e.key === "2") {
+    if (e.key === "3") {
       navigate("/");
     }
   };
 
   const items: MenuItem[] = [
     getItem("Harta", "1", <EnvironmentOutlined />),
-    getItem("Logout", "2", <LogoutOutlined />),
+    getItem("Vot", "2", <FileDoneOutlined />),
+    getItem("Logout", "3", <LogoutOutlined />),
   ];
 
   return (
@@ -61,7 +63,7 @@ export const Home: React.FC = () => {
         <Header style={{ padding: 0 }} />
         <Content className="layout">
           <div className="layout-content">
-            {current === "1" ? <RomaniaMap /> : "Bill is a cat."}
+            {current === "1" ? <RomaniaMap /> : <Vote/>}
           </div>
         </Content>
         {/* <Footer style={{ textAlign: "center" }}>
