@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0 }} />
+        {/* <Header style={{ padding: 0 }} /> */}
         <Content className="layout">
           <div className="layout-content">
             {current === "1" ? <RomaniaMap /> : <Vote/>}

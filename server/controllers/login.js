@@ -8,6 +8,9 @@ export const doLogin = async (req, res, next) => {
   console.log(req)
 
   if (user?.password === req.body.password) {
+    // Not working as expected yet :(
+    req.session.userId = user.id;
+    req.session.save();
     res.send(true)
   } else {
     res.send(false)
