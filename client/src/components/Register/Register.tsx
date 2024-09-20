@@ -11,7 +11,6 @@ export const Register = () => {
     try {
       const data = await POST("register", {
         body: JSON.stringify(values),
-        method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
